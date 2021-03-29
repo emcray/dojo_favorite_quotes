@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
+    <a href="{% url 'home' %}" role="button">Back</a>
+    <a href="{% url 'logout' %}" role="button">Logout</a>
+    <h3 id='profile'>Edit your profile</h3>
+    <div class="form">
+        <form action="update_user/{{user.id}}" method="POST">
+            {% csrf_token %}
+            <label for="fname">First Name:</label>
+            <input type="text" name="first_name" id="fname" value="{{ user.first_name }}"><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" name="last_name" id="lname" value="{{ user.last_name }}"><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{ user.email }}"><br>
+            <input type="submit" value="Update">
+        </form>
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

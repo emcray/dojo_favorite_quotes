@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.nav{
+    padding: 10px;
+    text-align: center;
+}
+.quotes{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.form{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 120px;
+    border: solid black 3px;
+}
+    h3{
+        padding: 3px;
+        text-decoration: underline;
+    }
+    form{
+        padding: 8px;
+    }
+    form label{
+        padding: 3px;
+    }
+    form input{
+        padding: 3px;
+        margin: 2px;
+    }
+#profile{
+    margin-left: 180px;
+    margin-top: 20px;
+}
+.home{
+    margin: 15px 0px 0px 115px;
+
+}
+h1{
+    color: rgb(56, 56, 219);
+    padding-bottom: 10px;
+    
+}
